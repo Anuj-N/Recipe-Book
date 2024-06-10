@@ -1,0 +1,107 @@
+:root {
+    --card-border-radius: 5%;
+}
+header {
+    margin-top: 50px;
+    font-family: "Audiowide", sans-serif;
+    font-size: xx-large;
+    position: sticky;
+    width: 100%;
+    color: rgb(233, 128, 16);
+    text-align: center;
+}
+body {
+    margin: 0;
+    background-color: hsl(0, 2%, 12%);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+}
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+figcaption {
+    color: wheat;
+}
+
+p {
+    overflow: auto;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--card-border-radius);
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    border-radius: var(--card-border-radius);
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    cursor: grab;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--card-border-radius);
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    border-radius: var(--card-border-radius);
+    color: black;
+}
+
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    border-radius: var(--card-border-radius);
+    transform: rotateY(180deg);
+    overflow: auto;
+}
+
+.pagination {
+    margin: 20px;
+}
+
+.pagination button {
+    border-radius: var(--card-border-radius);
+    padding: 10px 20px;
+    font-size: large;
+    margin: 5px;
+}
+
+.pagination span {
+    font-size: large;
+    margin: 5px;
+    color: white;
+}
